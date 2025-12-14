@@ -1,0 +1,414 @@
+/* App.css - COMPLETO PROFESSIONALE + CHRISTMAS + NEVE 25 FIOCCHI */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* Home Page Styling */
+.home-container {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centra orizzontalmente il contenuto */
+}
+
+.home-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 50px;
+  animation: fadeIn 0.6s ease-in;
+  position: relative;
+  z-index: 20;
+}
+
+.home-header h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  font-weight: 300;
+  opacity: 0.95;
+  letter-spacing: 1px;
+}
+
+.signature {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #ffd700;
+  margin-top: 2rem;
+}
+
+.tasks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+  gap: 25px;
+  max-width: 900px;
+  margin: 0 auto;
+  justify-content: center;  /* centra le card dentro la griglia */
+}
+
+.task-card {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.task-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(102, 126, 234, 0.3);
+}
+
+.task-card:hover::before {
+  transform: scaleX(1);
+}
+
+.task-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.task-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #333;
+  font-weight: 600;
+}
+
+.task-card p {
+  flex-grow: 1;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.task-arrow {
+  font-size: 1.5rem;
+  color: #667eea;
+  transition: transform 0.3s ease;
+  align-self: flex-start;
+}
+
+.task-card:hover .task-arrow {
+  transform: translateX(8px);
+}
+
+/* CHRISTMAS TIME PAGE */
+.christmas-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #e74c3c 100%);
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;      /* centra verticalmente il blocco */
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.christmas-header {
+  z-index: 20;
+  max-width: 900px;             /* colonna testo più larga */
+  margin: 0 auto 3rem auto;
+}
+
+.christmas-header h1 {
+  font-size: clamp(3.2rem, 6vw, 4.5rem);
+  margin-bottom: 1.5rem;
+  text-shadow: 3px 3px 8px rgba(0,0,0,0.8);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.christmas-message {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  max-width: 700px;
+  margin: 0 auto 2.5rem auto;
+  opacity: 0.96;
+  font-weight: 300;
+}
+
+.signature {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #ffd700;
+  margin-top: 0.5rem;           /* più vicino al testo */
+}
+
+@keyframes glow {
+  from { text-shadow: 3px 3px 6px rgba(0,0,0,0.7), 0 0 20px #ffd700; }
+  to   { text-shadow: 3px 3px 6px rgba(0,0,0,0.7), 0 0 30px #ff6b6b; }
+}
+
+.back-button-container {
+  z-index: 20;
+  margin: 1rem 0 0 0;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 1.5rem 3rem;
+  background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  box-shadow: 0 10px 30px rgba(255,107,107,0.4);
+  transition: all 0.3s ease;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.back-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s;
+}
+
+.back-button:hover::before {
+  left: 100%;
+}
+
+.back-button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(255,107,107,0.6);
+}
+
+/* NEVE CSS - 25 FIOCCHI REALISTICI */
+.snow-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.snowflake {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, rgba(255,255,255,0.9) 40%, transparent 60%);
+  border-radius: 50%;
+  opacity: 0.85;
+  animation: snowfall linear infinite;
+  box-shadow: 0 0 6px rgba(255,255,255,0.8);
+}
+
+/* 25 fiocchi con posizioni e velocità diverse */
+.snowflake:nth-child(1)  { left: 5%;  animation-duration: 15s; animation-delay: 0s; }
+.snowflake:nth-child(2)  { left: 12%; animation-duration: 20s; animation-delay: -2s; }
+.snowflake:nth-child(3)  { left: 18%; animation-duration: 18s; animation-delay: -5s; }
+.snowflake:nth-child(4)  { left: 25%; animation-duration: 22s; animation-delay: -1s; }
+.snowflake:nth-child(5)  { left: 32%; animation-duration: 16s; animation-delay: -8s; }
+.snowflake:nth-child(6)  { left: 38%; animation-duration: 19s; animation-delay: -3s; }
+.snowflake:nth-child(7)  { left: 45%; animation-duration: 24s; animation-delay: -6s; }
+.snowflake:nth-child(8)  { left: 52%; animation-duration: 17s; animation-delay: -10s; }
+.snowflake:nth-child(9)  { left: 58%; animation-duration: 21s; animation-delay: -4s; }
+.snowflake:nth-child(10) { left: 65%; animation-duration: 18s; animation-delay: -12s; }
+.snowflake:nth-child(11) { left: 72%; animation-duration: 23s; animation-delay: -7s; }
+.snowflake:nth-child(12) { left: 78%; animation-duration: 16s; animation-delay: -9s; }
+.snowflake:nth-child(13) { left: 85%; animation-duration: 20s; animation-delay: -1s; }
+.snowflake:nth-child(14) { left: 92%; animation-duration: 19s; animation-delay: -11s; }
+.snowflake:nth-child(15) { left: 8%;  animation-duration: 22s; animation-delay: -5s; }
+.snowflake:nth-child(16) { left: 22%; animation-duration: 17s; animation-delay: -13s; }
+.snowflake:nth-child(17) { left: 35%; animation-duration: 24s; animation-delay: -2s; }
+.snowflake:nth-child(18) { left: 48%; animation-duration: 18s; animation-delay: -8s; }
+.snowflake:nth-child(19) { left: 62%; animation-duration: 16s; animation-delay: -6s; }
+.snowflake:nth-child(20) { left: 75%; animation-duration: 21s; animation-delay: -10s; }
+.snowflake:nth-child(21) { left: 88%; animation-duration: 19s; animation-delay: -4s; }
+.snowflake:nth-child(22) { left: 15%; animation-duration: 23s; animation-delay: -12s; }
+.snowflake:nth-child(23) { left: 40%; animation-duration: 17s; animation-delay: -7s; }
+.snowflake:nth-child(24) { left: 55%; animation-duration: 20s; animation-delay: -9s; }
+.snowflake:nth-child(25) { left: 82%; animation-duration: 18s; animation-delay: -3s; }
+
+@keyframes snowfall {
+  0%   { transform: translateY(-100vh) rotate(0deg);   opacity: 1; }
+  100% { transform: translateY(100vh)  rotate(720deg); opacity: 0; }
+}
+
+/* Loading Spinner */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+  gap: 20px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255,255,255,0.3);
+  border-top: 4px solid #ff6b6b;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .tasks-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .christmas-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .christmas-message {
+    font-size: 1.0rem;
+  }
+}
+
+/* Christmas CTA button */
+.christmas-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 400px;
+  width: 100%;
+  padding: 10px 30px;
+  margin: 100px auto 0 auto;
+  border-radius: 999px;
+  text-decoration: none;
+  background: linear-gradient(90deg, #ff6b6b, #ff9f43, #ffd93d);
+  box-shadow: 0 14px 35px rgba(255, 107, 107, 0.45);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.christmas-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 0% 0%, rgba(255,255,255,0.4), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.christmas-cta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(255, 107, 107, 0.6);
+}
+
+.christmas-cta:hover::before {
+  opacity: 1;
+}
+
+.cta-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cta-label {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.cta-sub {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.cta-right {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  animation: sleigh-bounce 1s ease-in-out infinite;
+}
+
+@keyframes sleigh-bounce {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  50%      { transform: translateX(4px) translateY(-2px); }
+}
+
+/* Centrare la griglia con un solo bottone */
+.tasks-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
