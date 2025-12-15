@@ -18,7 +18,7 @@ function TaskListHome() {
     <div className="home-container">
       <div style={{ position: 'relative', zIndex: 2 }}>
         <header className="home-header">
-          <h1>🎄 Final Lab CHRISTMAS EDITION 🎄</h1>
+          <h1>🎄 FINAL LAB CHRISTMAS EDITION 🎄</h1>
        
         </header>
 
