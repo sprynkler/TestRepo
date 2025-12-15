@@ -19,7 +19,7 @@ function TaskListHome() {
       <div style={{ position: 'relative', zIndex: 2 }}>
         <header className="home-header">
           <h1>🎄 Practice Lab Final - CHRISTMAS EDITION 🎄</h1>
-          <p className="subtitle">by Federico Lanzafame</p>
+       
         </header>
 
         <section className="tasks-grid">
