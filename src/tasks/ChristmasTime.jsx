@@ -36,7 +36,7 @@ function ChristmasTime() {
       {/* BACK BUTTON */}
       <div className="back-button-container">
         <Link to="/" className="back-button">
-          ← Torna alla Home
+          ← Back to Home
         </Link>
       </div>
     </div>
@@ -44,6 +44,7 @@ function ChristmasTime() {
 }
 
 export default ChristmasTime;
+
 
 
 
